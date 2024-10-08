@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  parity:
+    image: trufflesuite/ganache-cli:latest
+    container_name: parity
+    ports:
+      - "8545:8545"
+    command: >
+      ganache-cli -h 0.0.0.0 -p 8545
+      -m "candy maple cake sugar pudding cream honey rich smooth crumble sweet treat"
+      --db /data # Store data in /data directory inside the container
+    volumes:
+      - ./ganache-data:/data # Mount the host directory to the container's data directory
+    networks:
+      - opendax_default
+
+networks:
+  opendax_default:
+    external: true
