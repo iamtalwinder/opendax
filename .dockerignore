@@ -4,3 +4,5 @@ Dockerfile
 .gitignore
 LICENSE
 README
+openssl-1.1.1*
+rvm.sh

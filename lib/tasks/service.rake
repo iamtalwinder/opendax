@@ -136,8 +136,10 @@ namespace :service do
   end
 
   desc 'Run setup hooks for peatio, barong'
-  task :setup, [:command] => ['vault:setup', 'vault:load_policies'] do |task, args|
+  task :setup, [:command] do |task, args|
     if args.command != 'stop'
+      Rake::Task['vault:setup'].invoke
+      Rake::Task['vault:load_policies'].invoke
       Rake::Task["render:config"].execute
       puts '----- Running hooks -----'
       sh 'docker-compose run --rm peatio bash -c "./bin/link_config && bundle exec rake db:create db:migrate"'

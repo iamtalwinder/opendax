@@ -19,3 +19,5 @@ vendor/
 *.tfvars
 terraform.tfstate*
 !data/parity/.gitkeep
+openssl-1.1.1*
+rvm.sh
