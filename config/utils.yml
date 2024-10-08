@@ -12,8 +12,8 @@ arke:
   - id: 1
     driver: bitfaker
     debug: false
-    host: "http://www.app.local"
-    ws: "ws://www.app.local"
+    host: "http://www.ec2-3-6-151-31.ap-south-1.compute.amazonaws.com"
+    ws: "ws://www.ec2-3-6-151-31.ap-south-1.compute.amazonaws.com"
     key: ""
     secret: ""
     delay: 1
@@ -87,7 +87,7 @@ arke:
       target:
         driver: rubykube
         market: 'FTHUSD'
-        host: "http://www.app.local"
+        host: "http://www.ec2-3-6-151-31.ap-south-1.compute.amazonaws.com"
         key: ""
         secret: ""
         rate_limit: 1
